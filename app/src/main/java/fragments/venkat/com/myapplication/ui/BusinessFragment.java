@@ -15,7 +15,7 @@ import static fragments.venkat.com.myapplication.util.Constant.apiKey;
  * Created by venkatgonuguntala on 8/11/16.
  */
 
-public class BusinessFragment extends BaseFragment {
+public class BusinessFragment extends BaseRecyclerFragment {
     private final static String TAG = PoliticsFragment.class.getSimpleName();
 
 
@@ -35,5 +35,10 @@ public class BusinessFragment extends BaseFragment {
                 Log.e(TAG, error+"Retrofit Failure");
             }
         });
+    }
+
+    @Override
+    public void onRefresh() {
+        getHeadlinesFromApi();
     }
 }

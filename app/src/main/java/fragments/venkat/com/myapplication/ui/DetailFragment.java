@@ -22,15 +22,12 @@ public class DetailFragment extends Fragment {
     public static final String TAG = DetailFragment.class.getSimpleName();
 
     public static final String INDEX = "index";
+    public static final String TITLE = "title";
+    public static final String DATE_PUBLISHED = "date_published";
 
-    private List<Result> mResult;
     private String mTitle;
     private String mDate;
 
-    public void spit(Result result) {
-        mTitle = result.getTitle();
-        mDate = result.getPublishedDate();
-    }
 
     @Nullable
     @Override
@@ -39,7 +36,8 @@ public class DetailFragment extends Fragment {
         TextView titleTextView = (TextView) view.findViewById(R.id.detailTitle);
         TextView dateTextView = (TextView) view.findViewById(R.id.detailDate);
         Bundle bundle = getArguments();
-        int index = bundle.getInt(INDEX);
+        mTitle = bundle.getString(TITLE);
+        mDate = bundle.getString(DATE_PUBLISHED);
         titleTextView.setText(mTitle);
         dateTextView.setText(mDate);
         return view;

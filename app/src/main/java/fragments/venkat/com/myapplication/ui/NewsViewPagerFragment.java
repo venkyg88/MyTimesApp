@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,8 @@ public class NewsViewPagerFragment extends Fragment {
 
 
         final PoliticsFragment politicsFragment = new PoliticsFragment();
+        /*FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();*/
         final HealthFragment healthFragment = new HealthFragment();
         final WorldFragment unitedStatesFragment = new WorldFragment();
         final BusinessFragment businessFragment = new BusinessFragment();
@@ -70,6 +74,7 @@ public class NewsViewPagerFragment extends Fragment {
             }
 
         });
+
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
         return view;
@@ -80,4 +85,5 @@ public class NewsViewPagerFragment extends Fragment {
         super.onStop();
         getActivity().setTitle(getResources().getString(R.string.app_name));
     }
+
 }

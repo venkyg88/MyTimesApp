@@ -25,8 +25,6 @@ public abstract class HeadLinesListAdapter extends RecyclerView.Adapter {
         mResult = results;
     }
 
-    DetailFragment mDetailFragment = new DetailFragment();
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(getLayout(), parent, false);
@@ -67,10 +65,10 @@ public abstract class HeadLinesListAdapter extends RecyclerView.Adapter {
 
         @Override
         public void onClick(View v) {
-            onHeadLinesItemSelected(mIndex);
-            mDetailFragment.spit(mResult.get(mIndex));
+            onHeadLinesItemSelected(mIndex, mResult);
+
         }
     }
 
-    protected abstract void onHeadLinesItemSelected(int index);
+    protected abstract void onHeadLinesItemSelected(int index, List<Result> result);
 }

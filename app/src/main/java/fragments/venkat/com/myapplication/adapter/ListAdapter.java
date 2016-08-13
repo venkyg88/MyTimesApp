@@ -2,7 +2,10 @@ package fragments.venkat.com.myapplication.adapter;
 
 import android.support.v4.app.ListFragment;
 
+import java.util.List;
+
 import fragments.venkat.com.myapplication.R;
+import fragments.venkat.com.myapplication.model.Result;
 import fragments.venkat.com.myapplication.ui.PoliticsFragment;
 
 /**
@@ -22,7 +25,7 @@ public class ListAdapter extends HeadLinesListAdapter {
     }
 
     @Override
-    protected void onHeadLinesItemSelected(int index) {
-        mListener.onHeadLinesItemSelected(index);
+    protected void onHeadLinesItemSelected(int index, List<Result> resultList) {
+        mListener.onHeadLinesItemSelected(index, resultList);
     }
 }

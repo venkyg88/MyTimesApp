@@ -16,8 +16,9 @@ import static fragments.venkat.com.myapplication.util.Constant.apiKey;
  * Created by venkatgonuguntala on 8/11/16.
  */
 
-public class PoliticsFragment extends BaseFragment {
+public class PoliticsFragment extends BaseRecyclerFragment {
     private final static String TAG = PoliticsFragment.class.getSimpleName();
+
 
     @Override
     public void getHeadlinesFromApi() {
@@ -38,7 +39,14 @@ public class PoliticsFragment extends BaseFragment {
         });
     }
 
+    @Override
+    public void onRefresh() {
+        getHeadlinesFromApi();
+    }
+
+
+
     public interface onHeadLinesSelectedInterface {
-        void onHeadLinesItemSelected(int index);
+        void onHeadLinesItemSelected(int index, List<Result> resultList);
     }
 }
