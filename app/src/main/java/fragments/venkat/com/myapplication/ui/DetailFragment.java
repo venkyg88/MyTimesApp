@@ -21,7 +21,6 @@ import fragments.venkat.com.myapplication.model.Result;
 public class DetailFragment extends Fragment {
     public static final String TAG = DetailFragment.class.getSimpleName();
 
-    public static final String INDEX = "index";
     public static final String TITLE = "title";
     public static final String DATE_PUBLISHED = "date_published";
 

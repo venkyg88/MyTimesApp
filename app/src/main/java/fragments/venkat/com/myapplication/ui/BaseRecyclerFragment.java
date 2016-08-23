@@ -48,6 +48,14 @@ public abstract class BaseRecyclerFragment extends Fragment implements SwipeRefr
         return view;
     }
 
+    void onItemsLoadComplete() {
+        // Update the adapter and notify data set changed
+        // ...
+
+        // Stop refresh animation
+        mSwipeRefreshLayout.setRefreshing(false);
+    }
+
     public abstract void getHeadlinesFromApi();
 
 }

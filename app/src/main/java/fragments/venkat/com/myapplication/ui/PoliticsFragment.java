@@ -37,6 +37,8 @@ public class PoliticsFragment extends BaseRecyclerFragment {
                 Log.e(TAG, error+"Retrofit Failure");
             }
         });
+
+        onItemsLoadComplete();
     }
 
     @Override
